@@ -102,6 +102,7 @@ button {
 
 #display-message-section{
     overflow-y: scroll;
+    max-height: 500px;
 }
 
 
