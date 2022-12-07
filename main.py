@@ -16,7 +16,7 @@ ROOMS = ["lounge", "Tru News", "Programming", "Meet Up"]
 
 # CREATE DATABASE
 # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///new-users-collection.db"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",  "sqlite:///new-users-collection.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL",  "sqlite:///new-users-collection.db")
 
 # it will silence the deprecation warning in the console.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
