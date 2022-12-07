@@ -100,4 +100,8 @@ button {
   font-size: 1.2em;
 }
 
+#display-message-section{
+    overflow-y: scroll;
+}
+
 
