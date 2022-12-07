@@ -3,18 +3,20 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
+import os
 
 # Creating a server
 app = Flask(__name__)
 app.app_context().push()
-app.secret_key = "TRU_CONNECT_APP_KEY"
+app.secret_key = os.environ.get("KEY")
 
 # Initialize Flask-SocketIO
 socketio = SocketIO(app)
 ROOMS = ["lounge", "Tru News", "Programming", "Meet Up"]
 
 # CREATE DATABASE
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///new-users-collection.db"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///new-users-collection.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",  "sqlite:///blog.db")
 
 # it will silence the deprecation warning in the console.
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
