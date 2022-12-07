@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONNECT</title>
+    <script
+      src="{{ url_for('static', filename='scripts/index.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', filename='scripts/socketio.js') }}"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js"
+      integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <link rel="stylesheet" href="../static/base.css" />
+    <link rel="stylesheet" href="../static/chat.css" />
+  </head>
+  <body>
+    <!-- Rooms -->
+    <div id="navbar">
+      <a href="{{ url_for('homePage') }}" >Home</a>
+      {% for room in rooms: %}
+        <a href="#" class="select-room">{{ room|title }}</a>
+      {% endfor %}
+    </div>
+
+    <!-- Room Selection Sidebar -->
+    <div id="main-section">
+      <!-- This is Messaging Area -->
+      <div id="rightside-panel">
+        <!-- Display Message -->
+        <div id="display-message-section"></div>
+
+        <!-- Input Message -->
+        <div id="input-area">
+          <textarea
+            type="text"
+            id="user_message"
+            placeholder="Type Here..."
+            autocomplete="off"></textarea>
+
+          <button type="button" id="send_message">SEND MESSAGE (BE RESPECTFUL)</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      const userName = `{{ username }}`;
+    </script>
+  </body>
+</html>

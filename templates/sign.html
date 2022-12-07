@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/base.css" />
+    <!-- <link rel="stylesheet" href="./static/sign.css" /> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign.css') }}">
+    <link rel="shortcut icon" href="static/tru-logo.png" type="image/x-icon" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <form method="post" action="{{ url_for('signIn') }}">
+      <!-- Caption -->
+      <h3 id="caption">SIGN IN</h3>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <p class="msg">{{ message }}</p>
+      {% endfor %} {% endif %} {% endwith %}
+      <!-- Email Input -->
+      <div class="input-container">
+        <label for="email">Email </label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="label"
+          required
+        /><br />
+      </div>
+      <br />
+
+      <!-- Password Input -->
+      <div class="input-container">
+        <label for="password">Password </label><br />
+        <input type="password" id="password" name="password" required /><br />
+      </div>
+      <br />
+
+      <!-- Submit Button -->
+      <input type="submit" value="Sign In" id="btn" />
+      <a href="{{ url_for('register') }}">Register</a>
+    </form>
+  </body>
+</html>

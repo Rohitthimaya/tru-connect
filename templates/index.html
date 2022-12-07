@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 3.2.1 E requirement Met -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/base.css" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="shortcut icon" href="static/tru-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../static/scripts/index.js" defer></script>
+    <title>TRU CONNECT</title>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+
+      <div class="nav-header">
+        <div class="nav-title">TRU CONNECT</div>
+      </div>
+
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <nav class="nav-links">
+        <a href="{{ url_for('homePage') }}">Home</a>
+        {% if not logged_in: %}
+        <a href="{{ url_for('signIn') }}" target="_blank">Sign In</a>
+        <a href="{{ url_for('register') }}" target="_blank">Register</a>
+        {% endif %}
+        {% if logged_in: %}
+        <a href="{{ url_for('logout') }}" target="_blank">Log Out</a>
+        <a href="{{ url_for('connect') }}" target="_blank">Connect</a>
+        <a href="{{ url_for('feedback') }}" target="_blank">Feedback</a>
+        {% endif %}
+      </nav>
+    </div>
+
+    <!-- Title Section -->
+    <!-- 3.2.1 A requirement Met -->
+    <section class="title rows">
+      <!-- Title Content -->
+      <div class="title-text columns">
+        <h1>TRU <span id="connect-text">CONNECT</span></h1>
+        <p>CONNECT WITH NEW AND</p>
+        <p>INTERESTING STUDENTS AT TRU.</p>
+        <a href="{{ url_for('connect') }}" class="btn">CONNECT</a>
+        <img
+          src="./static/rotate-left.png"
+          class="rotate-left-img"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <div class="images columns">
+        <img
+          src="./static/TRU_CONNECT_PHONE_MOCK.png"
+          alt=""
+          srcset=""
+          class="phone"
+        />
+      </div>
+    </section>
+
+    <!-- About Page -->
+    <h1 class="know-more">Know More</h1>
+
+    <section class="about-rows">
+      <div class="info-columns">
+        <!-- 3.2.1 B requirement Met -->
+        <a href="{{ url_for('homePage') }}">
+        <img
+          src="./static/product.png"
+          class="about-img about-img-1"
+          alt=""
+          srcset=""
+        />
+        </a>
+        <h3>Features</h3>
+        <div>
+          <p><i class="fa-solid fa-brain"></i> Unique and Inclusive Matching Algorithm</p>
+          <p><i class="fa-solid fa-school"></i>university Students Only</p>
+          <p><i class="fa-solid fa-user-group"></i>One to Many Connection</p>
+        </div>
+      </div>
+
+      <div class="info-columns">
+        <a href="{{ url_for('homePage') }}">
+        <img
+          src="./static/creativity.png"
+          class="about-img about-img-2"
+          alt=""
+          srcset=""
+        />
+      </a>
+
+        <h3>Inspiration & Purpose</h3>
+        <div>
+          <p><i class="fa-solid fa-check"></i> Creates a safe and private space for users</p>
+          <p><i class="fa-solid fa-check"></i>Break the shyness barrier.</p>
+          <p><i class="fa-solid fa-check"></i>Text only option.</p>
+          <p><i class="fa-solid fa-check"></i>Ability to share person social media</p>
+          <p><i class="fa-solid fa-check"></i>Supported on all browsers versions.</p>
+        </div>
+      </div>
+
+    </section>
+    <!-- 3.2.1 F requirement Met -->
+    <footer id="footer">
+      <p>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-solid fa-envelope"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+      </p>
+      <!-- 3.2.1 D requirement Met  and 3.2.1 G requirement Met -->
+      <p><span>&#169</span> </span><span id="year"></span> Tru Connect - Made By <span>Rohit Thimaya</p>
+    </footer>
+  </body>
+</html>
