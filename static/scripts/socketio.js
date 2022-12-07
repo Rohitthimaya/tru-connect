@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Connecting to socket server
 //    var socket = io.connect('http://' + document.domain + ':' + location.port);
-    var socket = io.connect('https://tru-connect.herokuapp.com')
+    var socket = io.connect('https://tru-connect.herokuapp.com/connect')
     let room = "Lounge";
     joinRoom("Lounge");
 
