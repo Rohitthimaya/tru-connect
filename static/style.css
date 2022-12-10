@@ -14,7 +14,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0 auto;
 }
 
 /* NABVAR SECTION STYLING */
@@ -272,6 +271,11 @@ i{
   text-transform: uppercase;
 }
 
+.about-rows{
+    max-width: 1240;
+    margin: 0 auto;
+}
+
 
 @media screen and (max-width: 600px) {
   .info-columns{
@@ -292,8 +296,6 @@ i{
   .about-rows{
     text-align: left;
     padding: 0;
-    max-width: 1240;
-    margin: 0 auto;
   }
 
   .about-img{
