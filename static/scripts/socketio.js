@@ -70,6 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const p = document.createElement('p');
         p.className = "name_tag"
         p.innerHTML = msg;
-        document.querySelector('#display-message-section').append(p);
+        document.querySelector('#intro-section').append(p);
     }
 })
