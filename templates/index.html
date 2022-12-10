@@ -32,13 +32,13 @@
       <nav class="nav-links">
         <a href="{{ url_for('homePage') }}">Home</a>
         {% if not logged_in: %}
-        <a href="{{ url_for('signIn') }}" target="_blank">Sign In</a>
-        <a href="{{ url_for('register') }}" target="_blank">Register</a>
+        <a href="{{ url_for('signIn') }}" >Sign In</a>
+        <a href="{{ url_for('register') }}" >Register</a>
         {% endif %}
         {% if logged_in: %}
-        <a href="{{ url_for('logout') }}" target="_blank">Log Out</a>
-        <a href="{{ url_for('connect') }}" target="_blank">Connect</a>
-        <a href="{{ url_for('feedback') }}" target="_blank">Feedback</a>
+        <a href="{{ url_for('logout') }}" >Log Out</a>
+        <a href="{{ url_for('connect') }}" >Connect</a>
+        <a href="{{ url_for('feedback') }}" >Feedback</a>
         {% endif %}
       </nav>
     </div>

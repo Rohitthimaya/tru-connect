@@ -119,8 +119,10 @@ def logout():
 
 
 @app.route("/connect", methods=["GET", "POST"])
-@login_required
+# @login_required
 def connect():
+    if not current_user.is_authenticated:
+        return redirect(url_for("register"))
     return render_template("connect.html", logged_in=current_user.is_authenticated, username=current_user.name,
                            rooms=ROOMS)
 
@@ -156,5 +158,5 @@ def leave(data):
 
 
 if __name__ == "__main__":
-    app.run()
-    # socketio.run(app, debug=True)
+    # app.run()
+    socketio.run(app, debug=True)
