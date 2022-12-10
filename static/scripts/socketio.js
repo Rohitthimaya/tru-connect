@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(data.username){
             span_username.innerHTML = data.username;
             p.innerHTML = span_username.outerHTML + br.outerHTML + data.msg + br.outerHTML;
+            p.classList.add("name_tag")
             document.getElementById("display-message-section").append(p);
         }else{
             printSysMsg(data.msg);

@@ -9,6 +9,7 @@ import os
 app = Flask(__name__)
 app.app_context().push()
 app.secret_key = os.environ.get("KEY")
+# app.secret_key = "THIS_IS_KEY"
 
 # Initialize Flask-SocketIO
 socketio = SocketIO(app)

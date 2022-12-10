@@ -102,7 +102,13 @@ button {
 
 #display-message-section{
     overflow-y: scroll;
-    max-height: 500px;
+    max-height: 450px;
+}
+
+.name_tag{
+    position: fixed;
+    color: darkpurple;
+    font-weight: bold;
 }
 
 
