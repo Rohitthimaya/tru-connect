@@ -107,8 +107,9 @@ button {
 
 .name_tag{
     position: fixed;
-    color: darkpurple;
+    color: var(--darkpurple);
     font-weight: bold;
+    font-size: 1.5em;
 }
 
 

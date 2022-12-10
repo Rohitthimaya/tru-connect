@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Print System Message
     function printSysMsg(msg){
         const p = document.createElement('p');
+        p.className = "name_tag"
         p.innerHTML = msg;
         document.querySelector('#display-message-section').append(p);
     }
